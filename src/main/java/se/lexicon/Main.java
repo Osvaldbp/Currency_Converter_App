@@ -3,7 +3,17 @@ package se.lexicon;
 import java.util.Scanner;
 
 public class Main {
+
+    //Fixed conversion rates//
+    final static double SEK_TO_USD = 0.11;
+    final static double USD_TO_SEK = 9.48;
+    final static double SEK_TO_EURO = 0.091;
+    final static double EURO_TO_SEK = 11.05;
+
     public static void main(String[] args) {
+
+
+
         System.out.println("Currency Converter App:");
 
         String[] convertOptions = {
@@ -25,23 +35,41 @@ public class Main {
 
         double result = 0;
 
+        switch (choice) {
+            case 1:
+                result = convertSEKToUSD(amount);
+                System.out.println(amount + " converted to USD");
+                break;
+            case 2:
+                result = convertUSDToSEK(amount);
+                System.out.println(amount + " converted to SEK");
+                break;
+            case 3:
+                result = convertSEKToEuro(amount);
+                System.out.println(amount + " converted to Euro");
+                break;
+            case 4:
+                result = convertEuroToSEK(amount);
+                System.out.println(amount + " converted to SEK");
+                break;
+                default:
+                    System.out.println("Invalid choice");
 
+        }
+
+       userInput.close();
     }
     public static double convertSEKToUSD(double amount) {
-        double rate = 0.11;
-        return amount * rate;
+        return amount * SEK_TO_USD;
     }
     public static double convertUSDToSEK(double amount) {
-        double rate = 9.48;
-        return amount * rate;
+        return amount * USD_TO_SEK;
     }
     public static double convertSEKToEuro(double amount) {
-        double rate = 0.091;
-        return amount * rate;
+        return amount * SEK_TO_EURO;
     }
     public static double convertEuroToSEK(double amount) {
-        double rate = 11.05;
-        return amount * rate;
+        return amount * EURO_TO_SEK;
     }
 
 }
