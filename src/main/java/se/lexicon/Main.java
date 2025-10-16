@@ -15,7 +15,7 @@ public class Main {
     public static void main(String[] args) {
         Scanner userInput = new Scanner(System.in);
 
-        System.out.println("Currency Converter App:");
+        System.out.println("-------------Currency Converter App-------------");
         System.out.println("Choose by picking the number, ex: 1 = SEK to USD");
 
         String [] menuOptions = {
